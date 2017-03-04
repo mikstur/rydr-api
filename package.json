@@ -4,7 +4,6 @@
   "main": "server/server.js",
   "scripts": {
     "lint": "eslint .",
-    "prestart": "db-migrate up",
     "start": "node .",
     "miki": "NODE_ENV=local DB_HOST=localhost DB_USER=root DB_PASSWORD=root DB_PORT=3306 DB_DATABASE=rydr node .",
     "test": "mocha --recursive",
