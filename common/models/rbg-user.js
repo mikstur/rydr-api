@@ -67,7 +67,7 @@ module.exports = function (RbgUser) {
       return cb(err, null);
     }
 
-    return cb(null, currentUser);
+    return cb(null, currentUser, "ALLOWALL");
   }
 
 };

@@ -35,7 +35,10 @@
         {"arg": "req", "type": "object", "http": {"source": "req"}},
         {"arg": "res", "type": "object", "http": {"source": "res"}}
       ],
-      "returns": { "arg": "user", "type": "RbgUser" },
+      "returns": [
+        { "arg": "user", "type": "RbgUser" },
+        {"arg": "xFrameOptions", "type": "string", "http": {"target": "header", "header": "X-Frame-Options"}}
+      ],
       "http": { "verb": "get", "status": 200 }
     }
 
