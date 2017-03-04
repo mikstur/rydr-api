@@ -10,7 +10,7 @@ module.exports = function (server) {
     passport.use(new FacebookStrategy({
         clientID: socialAuthConfig.facebook.key, //config file??
         clientSecret: socialAuthConfig.facebook.secret,
-        callbackURL: 'http://localhost:3000/auth/facebook/callback',
+        callbackURL: socialAuthConfig.facebook.callbackUrl,
         profileFields: ['id', 'photos', 'emails', 'name']
     },
         function (accessToken, refreshToken, profile, done) {
