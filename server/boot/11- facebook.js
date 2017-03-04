@@ -29,7 +29,9 @@ module.exports = function (server) {
             }
 
             RbgUserModel.find({
-                email: profile.emails[0].value // TODO: Look up user based on UserEmail table instead...
+                where: {
+                    email: profile.emails[0].value // TODO: Look up user based on UserEmail table instead...
+                }
             }, function (err, users) {
                 if (err) return done(err);
 
