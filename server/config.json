@@ -1,0 +1,34 @@
+{
+  "restApiRoot": "/api",
+  "host": "0.0.0.0",
+  "port": 3000,
+  "remoting": {
+    "context": false,
+    "rest": {
+      "handleErrors": false,
+      "normalizeHttpPath": false,
+      "xml": false
+    },
+    "json": {
+      "strict": false,
+      "limit": "100kb"
+    },
+    "urlencoded": {
+      "extended": true,
+      "limit": "100kb"
+    },
+    "cors": false
+  },
+  "resetPasswordBaseUrl": "http://localhost:3001/#/reset-password",
+  "socialAuth": {
+    "facebook": {
+      "key": "399833177044090",
+      "secret": "836724fc8da5d08a86de6b893aaa20ce",
+      "callbackUrl": "http://localhost:3000/auth/facebook/callback"
+    },
+    "linkedIn": {
+      "key": "862pmw4d7voner",
+      "secret": "7JpbyUGcIyRTxdlc"
+    }
+  }
+}

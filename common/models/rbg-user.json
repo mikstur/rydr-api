@@ -1,0 +1,35 @@
+{
+  "name": "RbgUser",
+  "base": "User",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "firstname": {
+      "type": "string"
+    },
+    "lastname": {
+      "type": "string"
+    },
+    "mobile": {
+      "type": "string"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {
+
+    "me": {
+      "accepts": [
+        {"arg": "req", "type": "object", "http": {"source": "req"}},
+        {"arg": "res", "type": "object", "http": {"source": "res"}}
+      ],
+      "returns": { "arg": "user", "type": "RbgUser" },
+      "http": { "verb": "get", "status": 200 }
+    }
+
+  }
+}
+
