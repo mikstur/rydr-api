@@ -14,10 +14,19 @@
     },
     "mobile": {
       "type": "string"
+    },
+    "profilePictureUrl": {
+      "type": "string"
     }
   },
   "validations": [],
-  "relations": {},
+  "relations": {
+    "settings": {
+      "type": "hasOne",
+      "model": "Settings",
+      "foreignKey": "userId"
+    }
+  },
   "acls": [],
   "methods": {
 

@@ -7,7 +7,7 @@ module.exports = function(options) {
       return next();
     }
 
-    app.models.RbgUser.findById(req.accessToken.userId, function(err, user) {
+    app.models.RbgUser.findById(req.accessToken.userId, {include: "settings"}, function(err, user) {
       if (err) {
         return next(err);
       }
@@ -16,11 +16,6 @@ module.exports = function(options) {
       }
 
       user.accessToken = req.accessToken;
-
-      // TODO: Search for roles
-      user.roles = [
-
-      ];
 
       var loopbackContext = LoopBackContext.getCurrentContext();
       if (loopbackContext) {

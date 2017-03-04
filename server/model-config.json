@@ -44,13 +44,14 @@
       "remoting": {
         "sharedMethods": {
           "*": false,
-          "create": true,
-          "login": true,
-          "logout": true,
           "me": true
         }
       }
     }
+  },
+  "Settings": {
+    "dataSource": "db",
+    "public": false
   },
   "Email": {
     "dataSource": "email"

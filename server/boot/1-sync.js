@@ -7,7 +7,8 @@ module.exports = function(app) {
 		'ACL',
 		'RoleMapping',
 		'RbgRole',
-		'RbgUser'
+		'RbgUser',
+        'Settings'
 	];
 	
 	models.forEach(function(model) {

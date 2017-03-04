@@ -45,7 +45,8 @@ module.exports = function (server) {
                     email: profile.emails[0].value,
                     firstname: profile.name.givenName,
                     lastname: profile.name.familyName,
-                    password: "qwerty"
+                    password: "qwerty",
+                    profilePictureUrl: profile.photos[0].value || ""
                 };
 
                 RbgUserModel.create(data, function(err, rydrUser) {

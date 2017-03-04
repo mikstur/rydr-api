@@ -22,6 +22,19 @@ module.exports = function (RbgUser) {
     });
   });
 
+  RbgUser.observe('after save', function (ctx, next) {
+    if (ctx.isNewInstance) {
+      let SettingsModel = RbgUser.app.models.Settings;
+      SettingsModel.create({
+        userId: ctx.instance.id
+      }, function(err, settings) {
+        if (err) return next(err);
+
+        return next();
+      });
+    }
+  });
+
   RbgUser.me = function (req, res, cb) {
 
     if (req.user) {
