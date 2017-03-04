@@ -16,6 +16,12 @@
       "id": true,
       "required": true
     },
+    "findMeDescription": {
+      "type": "string"
+    },
+    "expiresOn": {
+        "type": "Date"
+    },
     "createdOn": {
       "type": "date",
       "defaultFn": "now"

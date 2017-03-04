@@ -49,7 +49,11 @@ module.exports = function (Trip) {
 
             // Create Journey
             function (trip, data, next) {
-                wimtService.createJourney(trip.origin, trip.destination, function (err, journey) {
+                if (!data.departureTime) {
+                    return next(new Error("Departure time required"));
+                }
+
+                wimtService.createJourney(trip.origin, trip.destination, data.departureTime, function (err, journey) {
                     if (err) return next(err);
 
                     return next(null, trip, data, journey);

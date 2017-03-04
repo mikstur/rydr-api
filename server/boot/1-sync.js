@@ -10,6 +10,7 @@ module.exports = function(app) {
 		'RbgUser',
 
         'Adventure',
+        'AdventureFeed',
         'AdventureUserMapping',
         'Settings',
         'Trip',

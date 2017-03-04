@@ -1,25 +1,26 @@
 {
-  "name": "Adventure",
+  "name": "AdventureFeed",
   "base": "PersistedModel",
   "idInjection": true,
   "options": {
     "validateUpsert": true
   },
   "properties": {
-    "adventureId": {
+    "adventureFeedId": {
       "type": "string",
       "id": true,
       "required": true,
       "defaultFn": "uuid"
     },
-    "departureTime": {
-      "type": "Date"
+    "adventureId": {
+      "type": "string",
+      "required": true
     },
-    "tripId": {
-      "type": "string"  
+    "userId": {
+      "type": "number"
     },
-    "externalJourneyId": {
-      "type": "string"  
+    "action": {
+      "type": "string"
     },
     "createdOn": {
       "type": "date",
@@ -32,15 +33,15 @@
   },
   "validations": [],
   "relations": {
-    "trip": {
+    "adventure": {
       "type": "belongsTo",
-      "model": "Trip",
-      "foreignKey": "tripId"
-    },
-    "feed": {
-      "type": "hasMany",
-      "model": "AdventureFeed",
-      "foreignKey": "adventureId"  
+      "model": "Adventure",
+      "foreignKey": "adventureId"
+    },  
+    "user": {
+      "type": "belongsTo",
+      "model": "RbgUser",
+      "foreignKey": "userId"
     }
   },
   "acls": [],

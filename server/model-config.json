@@ -58,6 +58,10 @@
     "dataSource": "db",
     "public": true
   },
+  "AdventureFeed": {
+    "dataSource": "db",
+    "public": true
+  },
   "AdventureUserMapping": {
     "dataSource": "db",
     "public": false
