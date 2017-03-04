@@ -1,0 +1,34 @@
+{
+  "restApiRoot": "/api",
+  "host": "0.0.0.0",
+  "port": 3000,
+  "remoting": {
+    "context": false,
+    "rest": {
+      "handleErrors": false,
+      "normalizeHttpPath": false,
+      "xml": false
+    },
+    "json": {
+      "strict": false,
+      "limit": "100kb"
+    },
+    "urlencoded": {
+      "extended": true,
+      "limit": "100kb"
+    },
+    "cors": false
+  },
+  "resetPasswordBaseUrl": "http://rydr-api-qa/#/reset-password",
+  "socialAuth": {
+    "facebook": {
+      "key": "399828460377895",
+      "secret": "c75caaddb22552452ea3353e6967951e",
+      "callbackUrl": "http://rydr-api-qa.herokuapp.com/auth/facebook/callback"
+    },
+    "linkedIn": {
+      "key": "862pmw4d7voner",
+      "secret": "7JpbyUGcIyRTxdlc"
+    }
+  }
+}
