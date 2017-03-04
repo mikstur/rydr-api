@@ -8,7 +8,10 @@ module.exports = function(app) {
 		'RoleMapping',
 		'RbgRole',
 		'RbgUser',
-        'Settings'
+
+        'Adventure',
+        'Settings',
+        'Trip'
 	];
 	
 	models.forEach(function(model) {

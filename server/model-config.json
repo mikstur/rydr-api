@@ -4,7 +4,8 @@
       "loopback/common/models",
       "loopback/server/models",
       "../common/models",
-      "./models"
+      "./models",
+      "../common/models/trip"
     ],
     "mixins": [
       "loopback/common/mixins",
@@ -24,6 +25,9 @@
   "ACL": {
     "dataSource": "db",
     "public": false
+  },
+  "Email": {
+    "dataSource": "email"
   },
   "RoleMapping": {
     "dataSource": "db",
@@ -49,11 +53,17 @@
       }
     }
   },
+
+  "Adventure": {
+    "dataSource": "db",
+    "public": true
+  },
   "Settings": {
     "dataSource": "db",
     "public": false
   },
-  "Email": {
-    "dataSource": "email"
+  "Trip": {
+    "dataSource": "db",
+    "public": true
   }
 }

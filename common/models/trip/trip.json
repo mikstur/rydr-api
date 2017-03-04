@@ -1,0 +1,59 @@
+{
+  "name": "Trip",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "tripId": {
+      "type": "string",
+      "id": true,
+      "required": true,
+      "defaultFn": "uuid"
+    },
+    "origin": {
+      "type": "GeoPoint"
+    },
+    "destination": {
+      "type": "GeoPoint"
+    },
+    "userId": {
+      "type": "number"  
+    },
+    "createdOn": {
+      "type": "date",
+      "defaultFn": "now"
+    },
+    "updateOn": {
+      "type": "date",
+      "defaultFn": "now"  
+    }
+  },
+  "validations": [],
+  "relations": {
+    "user": {
+      "type": "belongsTo",
+      "model": "RbgUser",
+      "foreignKey": "userId"
+    },
+    "adventures": {
+      "type": "hasMany",
+      "model": "Adventure",
+      "foreignKey": "adventureId"
+    }
+  },
+  "acls": [],
+  "methods": {
+
+    "costs": {
+      "accepts": [
+        {"arg": "tripId", "type": "string", "http": {"source": "path"}}
+      ],
+      "returns": { "arg": "cost", "type": "object" },
+      "http": { "verb": "get", "path": "/:tripId/costs", "status": 200 }
+    }
+
+  }
+}
+

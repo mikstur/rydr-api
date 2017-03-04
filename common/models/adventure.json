@@ -1,0 +1,44 @@
+{
+  "name": "Adventure",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "adventureId": {
+      "type": "string",
+      "id": true,
+      "required": true,
+      "defaultFn": "uuid"
+    },
+    "departureTime": {
+      "type": "Date"
+    },
+    "tripId": {
+      "type": "string"  
+    },
+    "externalJourneyId": {
+      "type": "string"  
+    },
+    "createdOn": {
+      "type": "date",
+      "defaultFn": "now"
+    },
+    "updateOn": {
+      "type": "date",
+      "defaultFn": "now"  
+    }
+  },
+  "validations": [],
+  "relations": {
+    "trip": {
+      "type": "belongsTo",
+      "model": "Trip",
+      "foreignKey": "tripId"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}
+
