@@ -36,15 +36,33 @@
       "type": "belongsTo",
       "model": "RbgUser",
       "foreignKey": "userId"
-    },
-    "adventures": {
-      "type": "hasMany",
-      "model": "Adventure",
-      "foreignKey": "adventureId"
     }
   },
   "acls": [],
   "methods": {
+
+    "findWithAdventures": {
+      "accepts": [],
+      "returns": { "arg": "trips", "type": "array" },
+      "http": { "verb": "get", "path": "/", "status": 200 }
+    },
+
+    "createAdventure": {
+      "accepts": [
+        {"arg": "tripId", "type": "string", "http": {"source": "path"}},
+        {"arg": "data", "type": "object", "http": {"source": "body"}}
+      ],
+      "returns": { "arg": "trip", "type": "object" },
+      "http": { "verb": "post", "path": "/:tripId/adventures", "status": 200 }
+    },
+
+    "getAdventure": {
+      "accepts": [
+        {"arg": "tripId", "type": "string", "http": {"source": "path"}}
+      ],
+      "returns": { "arg": "adventure", "type": "object" },
+      "http": { "verb": "get", "path": "/:tripId/adventure", "status": 200 }
+    },
 
     "costs": {
       "accepts": [
@@ -52,7 +70,15 @@
       ],
       "returns": { "arg": "cost", "type": "object" },
       "http": { "verb": "get", "path": "/:tripId/costs", "status": 200 }
-    }
+    },
+
+    "getPotentialAdventurers": {
+      "accepts": [
+        {"arg": "tripId", "type": "string", "http": {"source": "path"}}
+      ],
+      "returns": { "arg": "potentialAdventurers", "type": "array" },
+      "http": { "verb": "get", "path": "/:tripId/potential-adventurers", "status": 200 }
+    } 
 
   }
 }

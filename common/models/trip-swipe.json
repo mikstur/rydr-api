@@ -1,0 +1,49 @@
+{
+  "name": "TripSwipe",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "tripId1": {
+      "type": "string",
+      "id": true,
+      "required": true
+    },
+    "tripId2": {
+      "type": "string",
+      "id": true,
+      "required": true
+    },
+    "createdOn": {
+      "type": "date",
+      "defaultFn": "now"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "trip1": {
+      "type": "belongsTo",
+      "model": "Trip",
+      "foreignKey": "tripId1"
+    },
+    "trip2": {
+      "type": "belongsTo",
+      "model": "Trip",
+      "foreignKey": "tripId2"
+    }
+  },
+  "acls": [],
+  "methods": {
+
+    "swipe": {
+      "accepts": [
+        {"arg": "data", "type": "TripSwipe", "http": {"source": "body"}}
+      ],
+      "returns": { "arg": "matched", "type": "boolean" },
+      "http": { "verb": "post", "path": "/", "status": 200 }
+    } 
+
+  }
+}

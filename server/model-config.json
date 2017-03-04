@@ -58,12 +58,34 @@
     "dataSource": "db",
     "public": true
   },
+  "AdventureUserMapping": {
+    "dataSource": "db",
+    "public": false
+  },
   "Settings": {
     "dataSource": "db",
     "public": false
   },
   "Trip": {
     "dataSource": "db",
-    "public": true
+    "public": true,
+    "options": {
+      "remoting": {
+        "sharedMethods": {
+          "find": false
+        }
+      }
+    }
+  },
+  "TripSwipe": {
+    "dataSource": "db",
+    "public": true,
+    "options": {
+      "remoting": {
+        "sharedMethods": {
+          "create": false
+        }
+      }
+    }
   }
 }

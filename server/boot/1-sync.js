@@ -10,8 +10,10 @@ module.exports = function(app) {
 		'RbgUser',
 
         'Adventure',
+        'AdventureUserMapping',
         'Settings',
-        'Trip'
+        'Trip',
+        'TripSwipe'
 	];
 	
 	models.forEach(function(model) {

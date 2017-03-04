@@ -1,0 +1,43 @@
+{
+  "name": "AdventureUserMapping",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "adventureId": {
+      "type": "string",
+      "id": true,
+      "required": true
+    },
+    "userId": {
+      "type": "number",
+      "id": true,
+      "required": true
+    },
+    "createdOn": {
+      "type": "date",
+      "defaultFn": "now"
+    },
+    "updateOn": {
+      "type": "date",
+      "defaultFn": "now"  
+    }
+  },
+  "validations": [],
+  "relations": {
+    "adventure": {
+      "type": "belongsTo",
+      "model": "Adventure",
+      "foreignKey": "adventureId"
+    },
+    "user": {
+      "type": "belongsTo",
+      "model": "RbgUser",
+      "foreignKey": "userId"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}
