@@ -576,6 +576,8 @@ if (typeof module !== 'undefined' && typeof exports !== 'undefined' &&
              * Data properties:
              *
              *  - `user` – `{RbgUser=}` -
+             *
+             *  - `xFrameOptions` – `{string=}` -
              */
             "me": {
               url: urlBase + "/RbgUsers/me",
@@ -3638,6 +3640,8 @@ if (typeof module !== 'undefined' && typeof exports !== 'undefined' &&
              * @param {Object=} parameters Request parameters.
              *
              *  - `tripId` – `{string=}` -
+             *
+             *  - `departureTime` – `{string=}` -
              *
              * @param {function(Object,Object)=} successCb
              *   Success callback with two arguments: `value`, `responseHeaders`.

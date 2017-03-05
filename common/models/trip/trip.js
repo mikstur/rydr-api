@@ -198,7 +198,7 @@ module.exports = function (Trip) {
         });
     }
 
-    Trip.costs = function (tripId, cb) {
+    Trip.costs = function (tripId, departureTime, cb) {
 
         var wimtService = WimtService.create();
 
@@ -219,7 +219,7 @@ module.exports = function (Trip) {
             },
 
             function (trip, next) {
-                wimtService.createJourney(trip.origin, trip.destination, function (err, journey) {
+                wimtService.createJourney(trip.origin, trip.destination, departureTime, function (err, journey) {
                     if (err) return next(err);
 
                     return next(null, journey);
