@@ -64,7 +64,7 @@
   },
   "AdventureUserMapping": {
     "dataSource": "db",
-    "public": false
+    "public": true
   },
   "Settings": {
     "dataSource": "db",
