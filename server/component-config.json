@@ -1,5 +1,11 @@
 {
   "loopback-component-explorer": {
-    "mountPath": "/explorer"
+    "mountPath": "/explorer",
+    "apiInfo": {
+      "title": "Rydr",
+      "description": "Rydr API Documentation.",
+      "termsOfServiceUrl": "http://api.rydr.co.za/terms/",
+      "contact": "apiteam@rydr.co.za"
+    }
   }
 }
