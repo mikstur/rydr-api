@@ -48,7 +48,7 @@ module.exports = function (server) {
                     firstname: profile.name.givenName,
                     lastname: profile.name.familyName,
                     password: "qwerty",
-                    profilePictureUrl: profile.photos[0].value || ""
+                    profilePictureUrl: "https://graph.facebook.com/" + profile.id + "/picture?width=900&height=900" //profile.photos[0].value || ""
                 };
 
                 RbgUserModel.create(data, function(err, rydrUser) {
